@@ -1,6 +1,6 @@
 # Tutor de Cubo Mágico com Visão Computacional
 
-Este projeto tem como objetivo criar um tutor de cubo mágico usando visão computacional. A aplicação usa uma webcam para reconhecer um cubo mágico 3x3, identificar seu estado atual, calcular uma solução e guiar o usuário passo a passo até a resolução.
+Este projeto tem como objetivo criar um tutor de cubo mágico usando visão computacional. A aplicação usa uma webcam para reconhecer um cubo mágico 3x3, identificar seu estado atual, calcular uma solução através do método de Kociemba e guiar o usuário passo a passo até a resolução.
 
 A proposta combina captura de vídeo, processamento de imagem, classificação de cores, validação lógica do cubo, algoritmos clássicos de resolução e uma interface interativa para acompanhamento do usuário.
 
@@ -872,3 +872,7 @@ O caminho mais eficiente para construir este projeto é:
 3. Resolver o cubo com um algoritmo pronto.
 4. Focar primeiro na leitura confiável das cores.
 5. Evoluir depois para acompanhamento em tempo real.
+
+## Hashtags
+
+#ComputerVision #VisaoComputacional #OpenCV #Python #MachineLearning #ArtificialIntelligence #RubiksCube #CuboMagico #ImageProcessing #ProcessamentoDeImagem #Algoritmos #Kociemba #ProjetoDePortfolio #PortfolioDev #ComputerScience 
