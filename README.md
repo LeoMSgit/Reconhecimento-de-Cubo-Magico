@@ -19,7 +19,7 @@ Webcam
   -> Verificação dos movimentos do usuário
 ```
 
-O projeto pode começar com um MVP guiado, onde o usuário mostra as seis faces do cubo uma por vez. Depois, ele pode evoluir para um tutor em tempo real, com verificação automática de movimentos e instruções visuais sobre a imagem da câmera.
+A ideia original do projeto é um MVP que funciona como guia onde o usuário mostra as seis faces do cubo uma por vez. Depois, ele pode evoluir para um tutor em tempo real, com verificação automática de movimentos e instruções visuais sobre a imagem da câmera.
 
 ## Objetivo Do MVP
 
@@ -70,7 +70,7 @@ Deploy inicial: local
 
 ### Intenção
 
-Evitar começar por uma versão complexa demais. O projeto deve primeiro provar que consegue ler um cubo e gerar uma solução.
+O projeto deve primeiro provar que consegue ler um cubo e gerar uma solução.
 
 ### Implementação
 
@@ -142,7 +142,7 @@ Criar um fluxo guiado em que o sistema pede as faces em uma ordem definida. Uma 
 5. Cima
 6. Baixo
 
-Outra opção, mais intuitiva para o usuário, é capturar por cor central:
+Outra possível opção, capturar por cor central:
 
 1. Branco
 2. Vermelho
@@ -212,7 +212,7 @@ branco, amarelo, vermelho, laranja, azul, verde
 
 ### Desafios
 
-A leitura de cor muda conforme:
+A leitura de cor pode mudar conforme:
 
 - Iluminação do ambiente.
 - Sombra.
@@ -231,7 +231,7 @@ Com OpenCV:
 hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 ```
 
-Uma estratégia mais robusta é fazer calibração por sessão:
+Possivelmente uma estratégia mais robusta é fazer calibração por sessão:
 
 1. Capturar as seis faces.
 2. Usar o quadrado central de cada face como referência daquela cor.
@@ -286,7 +286,7 @@ Onde:
 - `L`: Left, face esquerda.
 - `B`: Back, face de trás.
 
-Um solver como Kociemba normalmente espera uma string de 54 caracteres:
+Para esse caso o solver de Kociemba parece uma boa opçãp e normalmente espera uma string de 54 caracteres:
 
 ```text
 UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB
@@ -423,7 +423,7 @@ Transformar a lógica em uma experiência usável.
 - Botões para confirmar ou recapturar.
 - Lista de movimentos.
 - Modo passo a passo.
-- Botão para avançar movimento.
+- Botão para avançar o movimento.
 - Ilustração da rotação atual.
 
 ### Tecnologias Possíveis
@@ -522,7 +522,7 @@ Desafio:
 
 - O overlay só é confiável se o sistema souber a orientação atual do cubo.
 
-Para o MVP, uma ilustração estática ao lado da câmera é mais simples e mais confiável.
+Para o MVP, uma ilustração estática ao lado da câmera é mais simples e confiável.
 
 ## Fase 13: Melhorar A Detecção Automática
 
@@ -641,7 +641,7 @@ Agora vamos formar a cruz branca sem destruir os cantos já resolvidos.
 
 ## Arquitetura Recomendada
 
-Estrutura sugerida:
+Estrutura proposta:
 
 ```text
 rubiks_tutor/
@@ -739,7 +739,7 @@ rubiks_tutor/
 1. Criar estrutura do projeto.
 2. Abrir webcam com OpenCV.
 3. Desenhar grade fixa 3x3.
-4. Capturar cor média dos nove pontos.
+4. Capturar a cor média dos nove pontos.
 5. Mostrar a face detectada em texto ou matriz.
 6. Criar calibração das seis cores.
 7. Capturar as seis faces.
@@ -761,7 +761,7 @@ rubiks_tutor/
 
 A mesma cor pode parecer diferente dependendo da luz.
 
-Soluções:
+Soluções possíveis:
 
 - Calibração por sessão.
 - Uso de HSV ou LAB.
@@ -772,7 +772,7 @@ Soluções:
 
 Cubos brilhantes podem atrapalhar a leitura.
 
-Soluções:
+Soluções possíveis:
 
 - Detectar regiões muito saturadas.
 - Pedir nova captura.
@@ -782,7 +782,7 @@ Soluções:
 
 O sistema pode confundir cima, baixo, esquerda e direita.
 
-Soluções:
+Soluções possíveis:
 
 - Usar fluxo guiado.
 - Pedir uma face de referência para cima.
@@ -792,7 +792,7 @@ Soluções:
 
 Uma leitura errada pode gerar um cubo que não existe fisicamente.
 
-Soluções:
+Soluções possíveis:
 
 - Validar antes de chamar o solver.
 - Mostrar prévia para o usuário corrigir.
@@ -802,7 +802,7 @@ Soluções:
 
 Comandos como "gire para a direita" podem ser confusos.
 
-Soluções:
+Soluções possíveis:
 
 - Usar notação padrão.
 - Mostrar diagrama.
@@ -872,5 +872,3 @@ O caminho mais eficiente para construir este projeto é:
 3. Resolver o cubo com um algoritmo pronto.
 4. Focar primeiro na leitura confiável das cores.
 5. Evoluir depois para acompanhamento em tempo real.
-
-O projeto é tecnicamente viável e tem alto potencial para portfólio, porque envolve percepção visual, geometria, classificação, validação lógica, algoritmos e interação com o usuário.
